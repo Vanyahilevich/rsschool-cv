@@ -1,3 +1,240 @@
-!
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/styly.css">
+	<link href="https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700" rel="stylesheet" />
+
+	<title>CV</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container container">
+				<div class="header__body">
+					<div class="header__logo">
+						<img src="/img/logo.svg" alt="logo">
+					</div>
+					<nav class="header__list">
+						<ul>
+							<li>Main</li>
+							<li>About the author</li>
+							<li>Works</li>
+							<li>Contacts</li>
+						</ul>
+					</nav>
+
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<div class="main__preview preview">
+				<div class="preview__container container">
+					<div class="preview__body">
+						<div class="body__text">
+							<div class="body__title">
+								<h1>Design</h1>
+							</div>
+							<div class="body__suptitle">
+								Lorem ipsum dolor sit amet.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main__age">
+				<div class="age__container container">
+					<div class="age__row">
+						<div class="age__main-body">
+							<div class="age__body">
+								<div class="age__item1">
+									4+
+								</div>
+								<div class="age__item2">
+									HTML
+								</div>
+
+							</div>
+							<div class="age__body">
+								<div class="age__item1">
+									4+
+								</div>
+								<div class="age__item2">
+									CSS
+								</div>
+
+							</div>
+							<div class="age__body">
+								<div class="age__item1">
+									3+
+								</div>
+								<div class="age__item2">
+									JS
+								</div>
+
+							</div>
+							<div class="age__body">
+								<div class="age__item1">
+									2+
+								</div>
+								<div class="age__item2">
+									Git&Github
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			
+			<div class="smart">
+				<div class="smart__container container">
+					<div class="smart__row">
+						<div class="smart__text">
+							<div class="smart__title">Hi! I’m a junior frontend developer. I want to upgrade my skills.</div>
+
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+			<div class="education">
+				<div class="education__cotainer container">
+					<div class="photos__lang">
+					<div class="education__row">
+						<div class="contacts__title">
+							Education and Foreign languages
+						</div>
+						<div class="education__suptitle">
+							Bachelors Degree of electronics. I work as a design engineer. Elementary (A2)
+						</div>
+						
+					</div>
+					<div class="photos">
+						<img src="https://sun9-23.userapi.com/impf/c849432/v849432998/11f0d8/oMB7vQeLp9I.jpg?size=755x1080&quality=96&sign=092fcc18f18b3f50df6392ffccc85cdc&type=album" alt="myPhoto">
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="code">
+				<div class="code__container container">
+					<div class="code__row">
+						<div class="contacts__title">
+							Code
+						</div>
+						<h2>The Hashtag Generator</h2>
+						<pre>
+function generateHashtag (str) {
+let re = /\s+/
+let hashtags
+if (str.length === 0) return false
+let notSpace = str.split(re)
+if(notSpace.join('') ===  '') return false
+hashtags = notSpace.map(item => (item[0].toUpperCase() + item.slice(1)) ).join('')
+if (hashtags.length >= 140) return false
+if (hashtags === "") return ''
+return `#${hashtags}`</pre>
+<h2>Where my anagrams at?</h2>
+<pre>
+function anagrams(word, words) {
+let sortWord = word.split('').sort().join('')
+let arr = []
+words.map(item => {
+if( item.split('').sort().join('') === sortWord ){
+arr.push(item)
+}
+} )
+return arr
+return sortWord}</pre>
+
+					</div>
+				</div>
+
+			</div>
+			
+
+
+			<div class="contacts">
+				<div class="contacts__container container">
+					<div class="contacts__title">
+						Contacts
+					</div>
+					<div class="contacts__body">
+						<div class="contacts__column">
+							<div class="contacts__item">
+								<div class="contacts__image">
+									<img src="/img/01.svg" alt="">
+								</div>
+								<div class="contacts__text">
+									Address:
+								</div>
+								<div class="contacts__info">
+									Minsk
+								</div>
+							</div>
+						</div>
+						<div class="contacts__column">
+							<div class="contacts__item">
+								<div class="contacts__image">
+									<img src="/img/02.svg" alt="">
+								</div>
+								<div class="contacts__text">
+									telephone:
+								</div>
+								<div class="contacts__info">
+									+375(29)80970**									
+								</div>
+							</div>
+						</div>
+						<div class="contacts__column">
+							<div class="contacts__item">
+								<div class="contacts__image">
+									<img src="/img/03.svg" alt="">
+								</div>
+								<div class="contacts__text">
+									Working hours:
+								</div>
+								<div class="contacts__info">
+									 10:00 - 20:00 </div>
+							</div>
+						</div>
+						<div class="contacts__column">
+							<div class="contacts__item">
+								<div class="contacts__image">
+									<img src="/img/04.svg" alt="">
+								</div>
+								<div class="contacts__text">
+									E-MAIL:
+								</div>
+								<div class="contacts__info">
+									Vanyahilevich@gmail.com </div>
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+			
+		</main>
+		<footer class="footer">
+			<div class="footer__container container">
+				<div class="footer__row">
+					<div class="footer__data">
+						<a href="https://rs.school/js/"><img src="/img/rs_school_js.svg" alt="">
+					</div></a>
+					<div class="footer__develop"><a href="https://github.com/Vanyahilevich">https://github.com/Vanyahilevich</a></div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	
+</body>
+
 </html>
