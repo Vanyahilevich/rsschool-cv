@@ -176,7 +176,7 @@ body {
 	display: none;
 	width: 50px;
 	height: 50px;
-	background: url(img/burger-menu.svg) no-repeat center;
+	background: url(../img/burger-menu.svg) no-repeat center;
 	background-size: contain;
 	transition: background 0.3s linear;
 }
@@ -245,7 +245,7 @@ body {
 		display: block;
 		width: 50px;
 		height: 50px;
-		background: url(/img/burger-menu.svg) no-repeat center;
+		background: url(../img/burger-menu.svg) no-repeat center;
 		background-size: contain;
 		transition: background 0.3s linear;
 		position: relative;
@@ -253,7 +253,7 @@ body {
 	}
 	.burger-active{
 	
-		background: url(/img/burger-menu-cross.svg) no-repeat center;
+		background: url(../img/burger-menu-cross.svg) no-repeat center;
 		background-size: contain;
 	}
 	.header__nav{
@@ -319,7 +319,7 @@ body {
 		display: block;
 		width: 50px;
 		height: 50px;
-		background: url(/img/burger-menu.svg) no-repeat center;
+		background: url(../img/burger-menu.svg) no-repeat center;
 		background-size: contain;
 		transition: background 0.3s linear;
 		position: relative;
@@ -327,7 +327,7 @@ body {
 	}
 	.burger-active{
 	
-		background: url(/img/burger-menu-cross.svg) no-repeat center;
+		background: url(../img/burger-menu-cross.svg) no-repeat center;
 		background-size: contain;
 	}
 	.header__nav{
