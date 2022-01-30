@@ -78,7 +78,18 @@ h6 {
 :root {
 	--white: white;
 	--black: black;
+	--brown-: #bdae82;
 	--brown: #bdae82;
+	--white-black: white;
+	--brown-white: #bdae82;
+	--brown-black: #bdae82;
+	--black-brown: #000;
+	--black-white: #000;
+	--brown-Mblack: #bdae82;
+	--Mblack: #1c1c1c;
+	--colorInput: transparent;
+}
+.dark {
 }
 
 html {
@@ -88,7 +99,7 @@ body {
 	font-family: Inter;
 }
 .wrapper {
-	background-color: var(--black);
+	background-color: var(--black-white);
 	display: flex;
 	flex-direction: column;
 
@@ -115,7 +126,7 @@ body {
 	line-height: 80px;
 	font-weight: 700;
 	font-family: Merriweather;
-	color: var(--brown);
+	color: var(--brown-black);
 }
 @media (max-width: 768px) {
 	.suptitle {
@@ -175,9 +186,17 @@ body {
 	background-size: contain;
 	transition: background 0.3s linear;
 }
-
+.header__btn {
+	background: transparent;
+	color: var(--white-black);
+	font-size: 20px;
+}
+.header__sun {
+	fill: var(--white-black);
+	margin-left: 35px;
+}
 .icon {
-	fill: var(--white);
+	fill: var(--white-black);
 	width: 50px;
 	height: 40px;
 	transition: fill 0.3s linear;
@@ -196,7 +215,7 @@ body {
 	font-size: 20px;
 	line-height: 50px;
 	font-weight: 400;
-	color: var(--white);
+	color: var(--white-black);
 	transition: color 0.3s linear;
 }
 .header__link a {
@@ -216,7 +235,7 @@ body {
 	font-size: 20px;
 	line-height: 50px;
 	font-weight: 700;
-	color: var(--white);
+	color: var(--white-black);
 
 	margin-left: 31px;
 }
@@ -262,7 +281,7 @@ body {
 		flex-direction: column;
 		width: 100%;
 		min-height: 590px;
-		background-color: var(--black);
+		background-color: var(--black-white);
 		z-index: 3;
 		font-size: 30px;
 		line-height: 60px;
@@ -285,7 +304,7 @@ body {
 		/* justify-content: center; */
 		width: 140%;
 		min-height: 590px;
-		background-color: var(--black);
+		background-color: var(--black-white);
 		z-index: 3;
 		padding: 40% 0 0 20%;
 	}
@@ -330,7 +349,7 @@ body {
 		/* justify-content: center; */
 		width: 140%;
 		min-height: 590px;
-		background-color: var(--black);
+		background-color: var(--black-white);
 		z-index: 3;
 		padding: 40% 0 0 20%;
 	}
@@ -338,10 +357,15 @@ body {
 		margin: 0 20px 0 0;
 	}
 }
+
 /* ===============================HeRo======================= */
 .hero__row {
 	background-image: url(../img/main.png);
 	margin-top: -90px;
+	height: 910px;
+}
+.light__hero__row {
+	background-image: url(../img/main-light.jpg);
 }
 .hero__info {
 	display: flex;
@@ -354,19 +378,35 @@ body {
 	font-size: 60px;
 	line-height: 120px;
 	font-weight: 700;
-	color: var(--white);
+	color: var(--white-black);
 }
 .hero__suptext {
 	font-size: 20px;
 	line-height: 40px;
-	color: var(--white);
+	color: var(--white-black);
 
 	margin-top: 10px;
 }
+.hero__button {
+	background: var(--brown-white);
+	border: 2px solid var(--brown);
+	transition: all 0.3s linear;
+}
+.hero__button:hover {
+	background: var(--brown-Mblack);
+	color: var(--white);
+}
+
+@media (max-width: 1100px) {
+	.hero__row {
+		background-position: right -400px bottom 0px;
+	}
+}
 @media (max-width: 768px) {
 	.hero__row {
-		max-height: 590px;
-		background-image: url(../img/main-768.jpg);
+		height: 590px;
+		background-size: auto 620px;
+		background-position: -50px -30px;
 	}
 	.hero__info {
 		display: flex;
@@ -436,7 +476,7 @@ body {
 	font-size: 20px;
 	line-height: 40px;
 	font-weight: 700;
-	color: var(--white);
+	color: var(--white-black);
 }
 @media (max-width: 768px) {
 	.column__title {
@@ -458,8 +498,9 @@ body {
 	max-width: 280px;
 	font-size: 18px;
 	line-height: 36px;
-	color: var(--white);
+	color: var(--white-black);
 	text-align: center;
+	flex: 1 1 auto;
 }
 
 /* ===================================Portfolio=================== */
@@ -478,6 +519,7 @@ body {
 }
 
 .portfolio__season {
+	display: flex;
 	width: 220px;
 	height: 55px;
 	border: 2px solid var(--brown);
@@ -486,10 +528,13 @@ body {
 	justify-content: center;
 	font-size: 20px;
 	line-height: 40px;
-	color: var(--brown);
-	background-color: var(--black);
-
-	transition: color 0.4s ease;
+	color: var(--brown-black);
+	background-color: var(--black-brown);
+}
+@media (max-width: 940px) {
+	.portfolio__main {
+		max-width: 460px;
+	}
 }
 .portfolio__season:hover {
 	color: var(--white);
@@ -502,16 +547,27 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	align-items: center;
 	flex: 1 1 33.333%;
 	margin: -10px -10px;
 }
 .portfolio__photo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	padding: 10px 10px;
+	height: 560px;
+	width: 450px;
 }
-
+.portfolio__photo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
 @media (max-width: 500px) {
-	.portfolio__photo img {
-		max-width: 300px;
+	.portfolio__photo {
+		width: 300px;
+		height: 400px;
 	}
 }
 /* ===================================Video============ */
@@ -521,9 +577,12 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	height: 705px;
 }
 .video__row img {
 	max-width: 100%;
+	max-height: 100%;
+	object-fit: scale-down;
 }
 .icon__video {
 	position: absolute;
@@ -533,6 +592,8 @@ body {
 }
 .icon__video:hover {
 	fill: var(--brown);
+}
+@media (max-width: 700px) {
 }
 @media (max-width: 768px) {
 	.icon__video {
@@ -549,14 +610,18 @@ body {
 	margin-bottom: 90px;
 }
 .price__column {
+	width: 450px;
 	display: flex;
 	margin: 0 5px 10px;
 	border: 3px solid var(--brown);
+	/* margin: 0px auto; */
 }
 .price__item {
 	display: flex;
 	flex-direction: column;
-	margin: 43px 115px;
+	justify-content: center;
+	align-items: center;
+	margin: 43px auto;
 }
 
 .price__title {
@@ -565,7 +630,7 @@ body {
 	line-height: 56px;
 	font-weight: 700;
 	text-align: center;
-	color: var(--white);
+	color: var(--white-black);
 }
 
 .price__price {
@@ -574,7 +639,7 @@ body {
 	line-height: 48px;
 	font-weight: 700;
 	text-align: center;
-	color: var(--brown);
+	color: var(--brown-black);
 	margin: 20px 0px;
 }
 .prices__suptitle {
@@ -584,7 +649,7 @@ body {
 	font-size: 18px;
 	line-height: 36px;
 	text-align: center;
-	color: var(--white);
+	color: var(--white-black);
 }
 .price__button {
 	width: 220px;
@@ -592,7 +657,7 @@ body {
 }
 @media (max-width: 500px) {
 	.price__item {
-		margin: 20px 30px;
+		margin: 20px auto;
 	}
 	.price__price {
 		font-size: 16px;
@@ -606,11 +671,16 @@ body {
 	display: flex;
 	justify-content: end;
 	background-image: url(../img/contacts.jpg);
+	height: 700px;
+	background-position: left;
+}
+.light__contacts__row {
+	background-image: url(../img/contacts-light.jpg);
 }
 .contacts__body {
 	display: flex;
 	flex-direction: column;
-	margin: 60px 20px 195px 0px;
+	margin: 60px 20px 0px 0px;
 }
 .contacts__form {
 	display: flex;
@@ -626,7 +696,7 @@ body {
 	font-size: 40px;
 	line-height: 80px;
 	font-weight: 700;
-	color: var(--brown);
+	color: var(--brown-black);
 
 	margin-bottom: 40px;
 }
@@ -637,23 +707,31 @@ body {
 	border: 2px solid var(--brown);
 	font-size: 20px;
 	line-height: 40px;
-	color: var(--brown);
-	background: transparent;
+	color: var(--brown-black);
 	margin-bottom: 20px;
+	background: var(--colorInput);
 }
 .contacts__message {
 	height: 100px;
 	margin-bottom: 13px;
 	width: 450px;
+	background: var(--colorInput);
 
 	border: 2px solid var(--brown);
 	font-size: 20px;
 	line-height: 40px;
-	color: var(--brown);
-	background: transparent;
+	color: var(--brown-black);
 }
 .contacts__button {
 	margin-top: 20px;
+	height: 55px;
+	background: var(--brown-white);
+	border: 2px solid var(--brown);
+	transition: all 0.3s linear;
+}
+.contacts__button:hover {
+	color: var(--white);
+	background: var(--brown-Mblack);
 }
 
 svg path {
@@ -661,13 +739,21 @@ svg path {
 	stroke: inherit;
 	stroke-width: inherit;
 }
+@media (max-width: 1170px) {
+	.contacts__row {
+		/* background-position: right; */
+		background-size: auto 700px;
+		background-position: -200px 0px;
+	}
+}
 @media (max-width: 768px) {
 	.contacts__row {
-		background-image: url(../img/contacts-768.jpg);
-
-		min-height: 600px;
+		background-position: left;
+		height: 600px;
 		display: flex;
 		justify-content: center;
+		background-size: auto 620px;
+		background-position: -250px 0px;
 	}
 	.contacts__body {
 		justify-content: center;
@@ -692,7 +778,7 @@ svg path {
 
 /* ===============================FOOTER================ */
 .footer {
-	background-color: var(--black);
+	background-color: var(--black-white);
 }
 .footer__row {
 	display: flex;
@@ -706,7 +792,7 @@ svg path {
 	justify-content: center;
 	font-size: 20px;
 	line-height: 50px;
-	color: var(--white);
+	color: var(--white-black);
 }
 .footer__info a {
 	color: inherit;
@@ -722,7 +808,7 @@ svg path {
 .footer__school {
 	font-size: 20px;
 	line-height: 50px;
-	color: var(--white);
+	color: var(--white-black);
 }
 
 .footer__social {
@@ -730,8 +816,17 @@ svg path {
 	display: flex;
 	justify-content: space-between;
 }
+.dogs {
+	fill: var(--white-black);
+	width: 16px;
+	height: 16px;
+	transition: fill 0.3s linear;
+}
+.dogs:hover {
+	fill: var(--brown);
+}
 .footer__icon {
-	fill: var(--white);
+	fill: var(--white-black);
 	width: 32px;
 	height: 32px;
 	transition: fill 0.3s linear;
@@ -750,4 +845,12 @@ svg path {
 		align-items: center;
 		justify-content: space-evenly;
 	}
+}
+
+.active {
+	color: var(--black-brown);
+	background: var(--brown-Mblack);
+}
+.active__lang {
+	color: var(--brown-white);
 }
