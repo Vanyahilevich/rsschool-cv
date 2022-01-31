@@ -90,18 +90,25 @@ const i18Obj = {
 console.log("ругается на ссылки и не придерживался perfectPixel ")
 
 
+
 const showBurger = () => {
-	const burger = document.querySelector('.burger')
-	const nav = document.querySelector('.header__nav')
+	const burger = document.querySelector('.logo__burger')
+	const menu = document.querySelector('.burger')
 	const ul = document.querySelector(".header__nav")
+	let svgBurger = document.querySelector('.burger__logo')
 	burger.addEventListener("click", () => {
-		burger.classList.toggle("burger-active")
-		nav.classList.toggle("header__nav__active")
+		menu.classList.toggle("burger__active")
+		if (menu.classList[1]) {
+		svgBurger.innerHTML = '<use xlink:href="sprite.svg#close-black"></use>';
+		
+		} else {
+			svgBurger.innerHTML = '<use xlink:href="sprite.svg#burger"></use>';
+		}
 	})
-	ul.addEventListener('click', (event) => {
-		burger.classList.toggle("burger-active")
-		nav.classList.toggle("header__nav__active")
-	})
+	// ul.addEventListener('click', (event) => {
+	// 	burger.classList.toggle("burger-active")
+	// 	nav.classList.toggle("header__nav__active")
+	// })
 }
 showBurger()
 //----------------------------------------------------------------
@@ -186,6 +193,7 @@ iconLight.addEventListener("click", () => {
 		document.documentElement.style.setProperty('--black-white', '#fff');
 		document.documentElement.style.setProperty('--colorInput', '#e6dbc7');
 		svg.innerHTML = '<use xlink:href="sprite.svg#moon"></use>';
+		
 
 
 	} else {
