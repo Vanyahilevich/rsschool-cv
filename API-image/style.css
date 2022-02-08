@@ -1,0 +1,170 @@
+/*Обнуление*/
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,
+:active {
+	outline: none;
+}
+a:focus,
+a:active {
+	outline: none;
+}
+nav,
+footer,
+header,
+aside {
+	display: block;
+}
+html,
+body {
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+	font-family: inherit;
+}
+input::-ms-clear {
+	display: none;
+}
+button {
+	cursor: pointer;
+}
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+a,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+ul li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: inherit;
+}
+body{
+	background-color: rgb(75, 75, 189);
+
+}
+.header	{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 150px;
+}
+.input{
+	width: 300px;
+	height: 50px;
+	border-radius: 20px;
+	padding-left: 20px;
+	margin-right: 20px;
+}
+.button{
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	background-color: aliceblue;
+	color: rgb(75, 75, 189);;
+}
+.container{
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 20px;
+	height: 100vh;
+}
+.rows{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.photo{
+padding: 10px;
+/* border: 2px solid black; */
+}
+.img{
+	width: 300px;
+	height: 300px;
+	object-fit: cover;
+	border-radius: 20%;
+
+}
+
+.show-mode{
+	display: flex;
+
+	margin-top: 20px;
+	background-color: #444;
+	width: 200px;
+	height: 50px;
+	border-radius: 20px;
+
+	justify-content: space-evenly;
+	align-items: center;
+}
+.four{
+	width: 40px;
+	height: 40px;
+	background-color: aqua;
+	border-radius: 10px;
+
+}
+.two{
+	width: 40px;
+	height: 40px;
+	background-color: aqua;
+	border-radius: 10px;
+
+}
+.one{
+	width: 40px;
+	height: 40px;
+	background-color: aqua;
+	border-radius: 10px;
+
+}
+.show-one{
+	width: 700px;
+	height: 500px;
+	object-fit: cover;
+	border-radius: 20%;
+
+}
+.show-two{
+	width: 500px;
+	height: 400px;
+	object-fit: cover;
+	border-radius: 20%;
+
+}
