@@ -1,11 +1,7 @@
-let rows = document.querySelector('.rows')
-
-function searchImage(search){
-
-fetch(`https://api.unsplash.com/search/photos?query=${search}&per_page=4&orientation=landscape&client_id=eMuyzNQuVPV4X7LAlSPiz9EWHwW5gq7gKJrq2-0UpPw`)
-.then( function (resp) {return resp.json()})
-.then (function (data) {
-	data.results.map(item =>{
+let gallery = document.querySelector('.gallery')
+function createImage(data) {
+	data.results.length = 28;
+	data.results.map(item => {
 		const photo = document.createElement('div');
 		const img = document.createElement('img');
 		photo.classList.add('photo')
@@ -13,68 +9,72 @@ fetch(`https://api.unsplash.com/search/photos?query=${search}&per_page=4&orienta
 		photo.append(img);
 		img.src = `${item.urls.small_s3}`;
 		img.alt = `image`;
-		rows.append(photo)
-
+		gallery.append(photo)
 	})
-	let showMode = document.querySelector('.show-mode')
-	let img = document.querySelectorAll('.img')	
-	showMode.addEventListener('click', (e) =>{
-		if(e.target.classList.contains('one')){
-			img.forEach(item => {
-				item.classList = '';
-				item.classList.add('show-one')
-			})
-		}
-		if(e.target.classList.contains('two')){
-			img.forEach(item => {
-				item.classList = '';
-				item.classList.add('show-two')
-			})
-		}
-		if(e.target.classList.contains('four')){
-			img.forEach(item => {
-				item.classList = '';
-				item.classList.add('img')
-			})
-		}
-		
-
-	}
-	)
-
-
-
-
-	})
-.catch(function (){
-});
-
+}
+//////////////////////////////////////////////////////////////  Заменить количество картинок на странице
+function showImage(search, Page = 1) {
+	fetch(`https://api.unsplash.com/search/photos?query=${search}&per_page=28&page=${Page}&orientation=landscape&client_id=eMuyzNQuVPV4X7LAlSPiz9EWHwW5gq7gKJrq2-0UpPw`)
+		.then(function (resp) { return resp.json() })
+		.then(function (data) {
+			createImage(data)
+		})
+		.catch(function () {
+		});
 }
 
+showImage('random')
+
+let rememberSearch = '';
 let input = document.querySelector('.input')
-searchImage('pig')
-let button = document.querySelector('.button')
-button.addEventListener('click', ()=>{
-	if(input.value === "") return;
-	rows.innerHTML = ''
-	searchImage(input.value)
-})
-window.addEventListener('keyup', (e)=>{
-	if(input.value === "") return;
-	if(e.code === 'Enter') {
-		rows.innerHTML = ''
-			searchImage(input.value)
+let searchBtn = document.querySelector('.icon-search')
+let morePage = document.querySelector('.more-page')
+window.addEventListener('keyup', (e) => {
+	if (input.value === '') return;
+	if (input.value === rememberSearch) return;
+	if (e.code === "Enter") {
+		gallery.innerHTML = '';
+		showImage(input.value);
+		rememberSearch = input.value;
 	}
 })
+searchBtn.addEventListener('click', () => {
+	if (input.value === '') return;
+	if (input.value === rememberSearch) return;
+	gallery.innerHTML = '';
+	showImage(input.value);
+	rememberSearch = input.value;
+})
 
 
 
-let showMode = document.querySelector('.show-mode')
-let tt = document.querySelectorAll('.img')
 
-showMode.addEventListener('click', (e) =>{
-	if(e.target.classList.contains('one')){
-		console.log(tt)
+let click = 2;
+morePage.addEventListener('click', () => {
+	if (input.value === '') {
+		if (rememberSearch === '') {
+			showImage('random', click)
+		} else return;
+		showImage(rememberSearch, click);
+	} else {
+		showImage(input.value, click);
 	}
-}
-)
+	click++;
+})
+
+input.addEventListener('input', (e) => {
+	if (!input.value) {
+		cross.classList.remove('cross-active')
+
+	} else {
+		cross.classList.add('cross-active')
+	}
+
+
+})
+
+let cross = document.querySelector(".cross")
+cross.addEventListener('click', () => {
+	input.value = '';
+	cross.classList.remove('cross-active')
+})

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,27 +8,56 @@
 	<link rel="stylesheet" href="style.css">
 	<title>Document</title>
 </head>
+
 <body>
 	<div class="wrapper">
-		<div class="header">
-			<div class="conrtol-input">
-				<input class ="input" type="text" placeholder="Input image">
-				<button class="button">GO</button>
-			</div>
-			<div class="show-mode">
-				<div class="four"></div>
-				<div class="two"></div>
-				<div class="one"></div>
-			</div>
-		</div>
-		<div class="main">
+		<header class="header">
 			<div class="container">
-				<div class="rows">
-					
+				<div class="header-rows">
+					<div class="logo">
+						<svg class="logo">
+							<use xlink:href="sprite.svg#logo"></use>
+						</svg>
+					</div>
+					<div class="conrtol-input">
+						<input class="input" type="text" placeholder="Search free photos" autofocus>
+						
+						<svg class="icon icon-search">
+							<use xlink:href="sprite.svg#icon-search"></use>
+						</svg>
+						<svg class="cross">
+							<use xlink:href="sprite.svg#cross"></use>
+						</svg>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="footer"></div>
+		</header>
+		<main class="main-rows">
+			<div class="container">
+				<section class="gallery">
+				</section>
+				<div class="main">
+					<div class="more-page">Show more pictures ↓</div>
+				</div>
+			</div>
+		</main>
+
+
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__row">
+					<div class="footer__data">2022</div>
+					<div class="footer__github">
+						<a href="https://github.com/Vanyahilevich">github</a>
+					</div>
+					<div class="footer__school"><a href="https://rs.school/js-stage0/">
+						<svg class="icon-school">
+							<use xlink:href="sprite.svg#icon-school"></use>
+						</svg>
+					</a></div>
+				</div>
+			</div>
+		</footer>
 	</div>
 
 
@@ -36,4 +66,5 @@
 
 	<script src="app.js"></script>
 </body>
+
 </html>
